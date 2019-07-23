@@ -4,6 +4,8 @@ public class If {
     public static void main(String[] args) {
         boolean condition = true;
         
+        condition= !true;
+        
         if (condition) {
             System.out.println("only if condition is true");
         }
