@@ -16,9 +16,16 @@ class SimpleTest {
 	@Test
 	void testIsEvenFalse() {
 		Simple simple = new Simple();
-		boolean result =simple.isEven(43);
+		boolean result =simple.isEven(-43);
 		
 		assertFalse(result);
 	}
-
+	@Test
+	void testIsEvenZero() {
+		Simple simple = new Simple();
+		boolean result =simple.isEven(0);
+		
+		assertTrue(result);
+	}
+	
 }

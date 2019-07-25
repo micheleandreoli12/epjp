@@ -21,7 +21,14 @@ class S53Test {
 
         assertThat(actual, is(Double.POSITIVE_INFINITY));
     }
+    
+    @Test
+    void speedNegative() {
+        double actual = S53.speed(-100, 9.58);
 
+        assertEquals(actual, -10.438, 0.001);
+    }
+    
     @Test
     void distanceSquareTwo() {
         double actual = S53.distance(1, 10, 2, 9);
@@ -35,12 +42,42 @@ class S53Test {
 
         assertThat(actual, is(0.0));
     }
+    @Test
+    void distanceNegative() {
+        double actual = S53.distance(-1, -10, -2, -9);
+
+        assertEquals(actual, Math.sqrt(2),0.000_001);
+    }
+    @Test
+    void distanceXZero() {
+        double actual = S53.distance(1, 10, 1, 9);
+
+        assertEquals(actual, 1, 0.000_001);
+    }
+    @Test
+    void distanceYZero() {
+        double actual = S53.distance(1, 10, 2, 10);
+
+        assertEquals(actual, 1, 0.000_001);
+    }
 
     @Test
     void engineCapacityPlain() {
         double actual = S53.engineCapacity(74, 75, 4);
 
-        assertEquals(actual, 1290.252, 0.001);
+        assertEquals(actual, 1290252, 1);
+    }
+    @Test
+    void engineCapacityNegative() {
+        double actual = S53.engineCapacity(74, -75, 4);
+
+        assertEquals(actual,1290252,1 );
+    }
+    @Test
+    void engineCapacityNegative2() {
+        double actual = S53.engineCapacity(74, 75, -4);
+
+        assertEquals(actual, 1290252, 1);
     }
 
     @Test
