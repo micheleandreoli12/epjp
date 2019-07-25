@@ -49,7 +49,7 @@ public class S53 {
     public static int digitSum(int value) {
         // TODO
     	
-    	int v=value;
+    	int v=Math.abs(value);
     	int k=0;
     	int sum=0;
     	while(v>1) {
@@ -59,7 +59,7 @@ public class S53 {
     			break;
     		}
     	}
-    	int v1=value;
+    	int v1=Math.abs(value);
     	for(int i=0; i<=k; i++) {
     		sum=sum+v1%10;
     		v1=v1/10;

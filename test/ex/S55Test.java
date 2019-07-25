@@ -35,6 +35,13 @@ class S55Test {
 
         assertThat(actual, is(0L));
     }
+    
+    @Test
+    void sumNegative() {
+        long actual = S55.sum(-3, -1);
+
+        assertThat(actual, is(-6L));
+    }
 
     @Test
     void evenSumPositive() {
@@ -55,6 +62,13 @@ class S55Test {
         long actual = S55.evenSum(1002, 1002);
 
         assertThat(actual, is(1002L));
+    }
+    
+    @Test
+    void evenSumSingle2() {
+        long actual = S55.evenSum(1001, 1001);
+
+        assertThat(actual, is(0L));
     }
 
     @Test
@@ -77,10 +91,40 @@ class S55Test {
         
         assertThat(actual, is(0L));
     }
+    
+    @Test
+    void factorialZero() {
+        long actual = S55.factorial(0);
+        
+        assertThat(actual, is(1L));
+    }
+    
+    @Test
+    void factorialOver25() {
+        long actual = S55.factorial(39);
+        
+        assertThat(actual, is(0L));
+    }
 
     @Test
-    void fibonacci() {
-        fail("Not yet implemented");
+    void fibonacciZero() {
+    	long actual = S55.fibonacci(0);
+    			
+        assertThat(actual,is(0));
+    }
+    
+    @Test
+    void fibonacciOne() {
+    	long actual = S55.fibonacci(1);
+    			
+        assertThat(actual,is(1));
+    }
+    
+    @Test
+    void fibonacciPlain() {
+    	long actual = S55.fibonacci(4);
+    			
+        assertThat(actual,is(3));
     }
 
     @Test

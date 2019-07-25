@@ -41,6 +41,12 @@ class S54Test {
 
         assertThat(actual, is(false));
     }
+    @Test
+    void isOddZero() {
+        boolean actual = S54.isOdd(0);
+
+        assertThat(actual, is(false));
+    }
 
     @Test
     void asWordZero() {
@@ -69,6 +75,20 @@ class S54Test {
 
         assertThat(actual, is('B'));
     }
+    
+    @Test
+    void voteOverA() {
+        char actual = S54.vote(102);
+
+        assertThat(actual, is('X'));
+    }
+    
+    @Test
+    void voteBelowZero() {
+        char actual = S54.vote(-54);
+
+        assertThat(actual, is('X'));
+    }
 
     @Test
     void isLeapTrue() {
@@ -90,6 +110,35 @@ class S54Test {
 
         assertThat(actual.length, is(3));
         assertThat(actual[0], is(1));
+        assertThat(actual[1], is(2));
+        assertThat(actual[2], is(3));
+    }
+    
+    @Test
+    void sortNegative() {
+        int[] actual = S54.sort(3, -2, 1);
+
+        assertThat(actual.length, is(3));
+        assertThat(actual[0], is(-2));
+        assertThat(actual[1], is(1));
+        assertThat(actual[2], is(3));
+    }
+    @Test
+    void sortZero() {
+        int[] actual = S54.sort(3, 2, 0);
+
+        assertThat(actual.length, is(3));
+        assertThat(actual[0], is(0));
+        assertThat(actual[1], is(2));
+        assertThat(actual[2], is(3));
+    }
+    
+    @Test
+    void sortEquals() {
+        int[] actual = S54.sort(3, 2, 2);
+
+        assertThat(actual.length, is(3));
+        assertThat(actual[0], is(2));
         assertThat(actual[1], is(2));
         assertThat(actual[2], is(3));
     }
