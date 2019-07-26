@@ -104,9 +104,17 @@ public class S55 {
 	 * @return The multiplication table for value, when possible
 	 */
 	public static int[][] multiplicationTable(int value) {
-		int[][] result = new int[0][0];
+		int[][] result = new int[Math.abs(value)][Math.abs(value)];
 
 		// TODO
+		for(int i=0; i<Math.abs(value); i++) {
+			for(int j=0; j<Math.abs(value); j++) {
+				result[i][j] = (i+1)*(j+1);
+				if(value<0) {
+					result[i][j] = -result[i][j];
+				}
+			}
+		}
 
 		return result;
 	}
