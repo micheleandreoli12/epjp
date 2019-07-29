@@ -83,9 +83,11 @@ class S56Test {
         int[] original = new int[] {1, 2, 3};
         int[] actual = S56.reverse(original);
 
-        assertThat(actual.length, is(original.length));
-        for(int i = 0; i < original.length; i++) {
-            assertThat(actual[i], is(original[original.length - i - 1]));
+        int l1=actual.length;
+        int l2=original.length;
+        assertEquals(l1, l2);
+        for(int i = 0; i < l2; i++) {
+            assertThat(actual[i], is(original[l2 - i - 1]));
         }
     }
 

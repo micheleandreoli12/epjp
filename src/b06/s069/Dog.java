@@ -10,6 +10,6 @@ public class Dog extends Mammal {
 
     @Override
     public String toString() {
-        return "Dog [" + tail + ", gestation=" + gestation + "]";
+        return "Dog [" + tail.getSize() + ", gestation=" + gestation + "]";
     }
 }
