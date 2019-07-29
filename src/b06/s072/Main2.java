@@ -1,6 +1,6 @@
 package b06.s072;
 
-public class Main {
+public class Main2 {
 	public static void main(String[] args) {
 		Dog tom = new Dog("Tom", 2.42);
 
@@ -25,12 +25,25 @@ public class Main {
 
 		Dog fastest = Dogs[0];
 
-		for (int i = 1; i < 12; i++) {
+		for(int j=12; j>0; j--) {
+			Dog SpeedDogs[]= new Dog[12];
+		
+		 for (int i = 1; i < j; i++) {
 			if (Dogs[i].getSpeed() > fastest.getSpeed()) {
 				fastest = Dogs[i];
+				SpeedDogs[j-1] = fastest;
 			}
+		 for(int k=0; k<j-1; k++) {
+			 if(Dogs[k]!= fastest) {
+			 SpeedDogs[k] = Dogs[k];
+			 } else {
+				 SpeedDogs[k]=Dogs[j-1];
+			 }
+		 }
+		}
 		}
 		System.out.println("Il cane più veloce é " + fastest.getName() + " v=" + fastest.getSpeed());
+		System.out.println();
 
 	}
 }

@@ -11,6 +11,10 @@ public class Hound extends Dog {
 		super(name);
 	}
 	
+	public Hound(int weight) {
+		super(weight);
+	}
+	
 	public Hound(String name, int weight) {
 		super(name, weight);
 	}

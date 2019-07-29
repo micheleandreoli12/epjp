@@ -6,7 +6,7 @@ abstract public class Dog {
 
 	private int weight;
 	private String name;
-	private String classname= "Cane";
+	private String classname;
 
 	public Dog() {
 		this(DEFAULT_NAME);
@@ -15,11 +15,17 @@ abstract public class Dog {
 	public Dog(String name) {
 		this(name, DEFAULT_WEIGHT);
 	}
+	
+	public Dog(int weight) {
+		this(DEFAULT_NAME, weight);
+	}
 
 	public Dog(String name, int weight) {
 		this.name = name;
 		this.weight = weight;
 	}
+	
+	
 
 	@Override
 	public String toString() {
@@ -32,6 +38,10 @@ abstract public class Dog {
 		String s = ("Il " + NAMECLASS + " si chiama " + name + " e pesa " + weight);
 		return s;
 
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }
