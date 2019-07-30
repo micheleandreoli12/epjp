@@ -93,6 +93,27 @@ public class S54 {
 			return 'X';
 		}
 	}
+	
+	public static char voteExc(double percentile) throws Exception {
+		// TODO
+		if (percentile < 0) {
+			throw new Exception("percentile must be >0 and <100");
+		} else if (percentile <= 50) {
+			return 'F';
+		} else if (percentile <= 60) {
+			return 'E';
+		} else if (percentile <= 70) {
+			return 'D';
+		} else if (percentile <= 80) {
+			return 'C';
+		} else if (percentile <= 90) {
+			return 'B';
+		} else if (percentile <= 100) {
+			return 'A';
+		} else {
+			throw new Exception("percentile must be >0 and <100");
+		}
+	}
 
 	/**
 	 * Leap year checker

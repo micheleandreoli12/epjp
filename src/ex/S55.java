@@ -20,6 +20,20 @@ public class S55 {
 			return sum;
 		}
 	}
+	
+	public static long sumex(int first, int last) throws Exception {
+		// TODO
+		int sum = 0;
+		if (first - last > 0) {
+			throw new Exception("first should be smaller than last");
+		} else {
+			for (int i = first; i <= last; i++) {
+				sum = sum + i;
+			}
+			return sum;
+		}
+	}
+
 
 	/**
 	 * Add up only the even numbers in the passed closed interval
@@ -71,6 +85,27 @@ public class S55 {
 		}
 		return fatt;
 	}
+	
+	public static long factorialE(int value) throws Exception {
+		// TODO
+		int fatt = 1;
+		if (value < 0) {
+			throw new Exception("value must be positive and < 25");
+		} else {
+			if (value < 25) {
+				if (value == 0) {
+					return fatt;
+				} else {
+					for (int i = 1; i <= value; i++) {
+						fatt = fatt * i;
+					}
+				}
+			} else {
+				throw new Exception("value must be positive and < 25");
+			}
+		}
+		return fatt;
+	}
 
 	/**
 	 * Fibonacci number (0, 1, 1, 2, 3, 5, 8, …)
@@ -84,6 +119,27 @@ public class S55 {
 		long f1=1;
 		long fvalue=0;
 		if(value==0) {
+			return 0;
+		} else if(value==1) {
+			return 1;
+		} else {
+			for(int i=2; i<=value; i++) {
+				fvalue=f1+f0;
+				f0=f1;
+				f1=fvalue;
+			}
+			return fvalue;
+		}
+	}
+	
+	public static long fibonacciExc(int value) throws Exception {
+		// TODO
+		long f0=0;
+		long f1=1;
+		long fvalue=0;
+		if(value<0) {
+			throw new Exception("index cannot be < 0");
+		}else if(value==0) {
 			return 0;
 		} else if(value==1) {
 			return 1;

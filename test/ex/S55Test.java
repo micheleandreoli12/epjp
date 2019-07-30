@@ -3,6 +3,8 @@ package ex;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -31,10 +33,23 @@ class S55Test {
 
 	@Test
 	void sumEmpty() {
-		long actual = S55.sum(1003, 1002);
+	long actual = S55.sum(1003, 1002);
 
 		assertThat(actual, is(0L));
 	}
+	@Test
+	void sumExc() {
+		try {
+			S55.sumex(3, 1);
+			fail("Should not get to this point");
+		} catch(Exception e) {
+			String expected = "first should be smaller than last";
+			assertThat(e.getMessage(), is(expected));
+		}
+	}
+	
+	
+	
 
 	@Test
 	void sumNegative() {
@@ -91,6 +106,30 @@ class S55Test {
 
 		assertThat(actual, is(0L));
 	}
+	
+	@Test
+	void factorialNegativeExc() {
+		try {
+			S55.factorialE(-4);
+			fail("Should not get to this point");
+		} catch(Exception e) {
+			String expected = "value must be positive and < 25";
+			assertThat(e.getMessage(), is(expected));
+		}
+		
+	}
+	
+	@Test
+	void factorialOver25Exc() {
+		try {
+			S55.factorialE(28);
+			fail("Should not get to this point");
+		} catch(Exception e) {
+			String expected = "value must be positive and < 25";
+			assertThat(e.getMessage(), is(expected));
+		}
+		
+	}
 
 	@Test
 	void factorialZero() {
@@ -122,6 +161,20 @@ class S55Test {
 
 	@Test
 	void fibonacciPlain() {
+		long actual = S55.fibonacci(7);
+
+		assertThat(actual, is(13L));
+	}
+	
+	@Test
+	void fibonacciPlainExc() {
+		try {
+			S55.fibonacciExc(-2);
+			fail("Should not get to this point");
+		} catch(Exception e) {
+			String expected = "index cannot be < 0";
+			assertThat(e.getMessage(), is(expected));
+		}
 		long actual = S55.fibonacci(7);
 
 		assertThat(actual, is(13L));
