@@ -10,7 +10,7 @@ public class S096 {
         System.out.println(sortedSet);
         System.out.println("First: " + sortedSet.first());
         System.out.println("Last: " + sortedSet.last());
-        System.out.println(sortedSet.subSet(sortedSet.first() + 1, sortedSet.last()));
+        System.out.println(sortedSet.subSet(sortedSet.first() + 1, sortedSet.last()));// last chiuso
     }
 
     private static SortedSet<Integer> aSortedSet() {

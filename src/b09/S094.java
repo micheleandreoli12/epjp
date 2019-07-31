@@ -33,6 +33,12 @@ public class S094 {
             System.out.print(it.next() + " ");
         }
         System.out.println('}');
+        
+        System.out.println("{");
+        for(Integer value: coll) {
+        	System.out.println(value+" ");
+        }
+        System.out.println("}");
 
         coll.remove(-5);
         
@@ -47,7 +53,7 @@ public class S094 {
     }
 
     private static Collection<Integer> emptyCollection() {
-        Collection<Integer> result = new ArrayList<Integer>();
+        Collection<Integer> result = new ArrayList<Integer>();//creo una lista poi la copio in un arraylist
 
         return result;
     }
