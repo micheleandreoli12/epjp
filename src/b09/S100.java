@@ -23,7 +23,7 @@ public class S100 {
             System.out.println("Key: " + item.getKey() + ", value: " + item.getValue());
         }
 
-        System.out.println("Value for key -1 (or null): " + map.get(-1));
+        System.out.println("Value for key -1 (or null): " + map.get(-1));// valore associato chiave
         System.out.println("Value for key -1 (or default): " + map.getOrDefault(-1, "missing"));
 
         Set<Integer> keys = map.keySet();
