@@ -33,5 +33,7 @@ abstract public class Person {
 	public String getname() {
 		return name;
 	}
+	
+	
 
 }

@@ -29,5 +29,9 @@ public class Hero extends Person {
 			return false;
 		}
 	}
+	
+	public String getclass() {
+		return "eroe";
+	}
 
 }

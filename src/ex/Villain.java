@@ -23,5 +23,9 @@ public class Villain extends Person {
 	public void shoot(Person person) {
 		person.changeenergy(-shootingpower);
 	}
+	
+	public String getclass() {
+		return "malvagio";
+	}
 
 }
