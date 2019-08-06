@@ -27,3 +27,6 @@ from dual;
 
 select trunc(5.75), trunc(5.75, 1), trunc(5.75, -1)
 from dual;
+
+select trunc(10), trunc(10, 1), trunc(52365, -2)
+from dual;

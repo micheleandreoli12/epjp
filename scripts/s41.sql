@@ -16,3 +16,11 @@ from employees;
 select replace('Begin here', 'Begin', 'End'),
 	substr('ABCDEFG',3,4)
 from dual;
+
+select replace('Begin here', 'Begin', 'End'),
+	substr(123456789,3,4)-- transforma in stringa
+from dual;
+
+select replace('Begin here', 'Begin', 'End'),-- vedi sopra
+	substr(SYSDATE,3,4)
+from dual;
