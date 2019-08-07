@@ -3,3 +3,10 @@ create table items (
     status char,
     name varchar2(20),
     coder_id integer);
+    
+    
+    SELECT
+        *
+    FROM items;
+    
+    COMMIT;

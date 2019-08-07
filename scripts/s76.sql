@@ -1,7 +1,7 @@
 set serveroutput on
 
 declare
-    v_a integer := 1;
+    v_a integer := 0;
 begin
     if v_a > 0 then
         dbms_output.put_line('v_a is positive');
