@@ -18,5 +18,4 @@ UPDATE CODERS
       SELECT my_seq.nextval
       FROM DUAL;
 
-DROP SEQUENCE my_seq;
-       
+DROP SEQUENCE my_seq; 
