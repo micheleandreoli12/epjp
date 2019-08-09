@@ -8,6 +8,8 @@ create table coder_salaries (
     new_salary number(8, 2)
 );
 
+alter table coders add CONSTRAINT CODERS_PK primary key(coder_id);
+
 -- a trigger
 create or replace trigger salary_update
 before update of salary on coders

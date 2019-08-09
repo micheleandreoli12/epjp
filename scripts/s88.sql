@@ -88,3 +88,22 @@ when others then
 dbms_output.put_line( 'Exception');
 end;
 /
+
+-- Es 2
+
+create or replace procedure tomorrow4 (
+p_name in varchar2) is
+begin
+ dbms_output.put_line( p_name||', '||(sysdate +1));
+end tomorrow4;
+/
+
+-- uso procedura
+declare
+v_name varchar2(20) := 'Mario';
+
+begin
+tomorrow4(v_name);
+end;
+/
+
